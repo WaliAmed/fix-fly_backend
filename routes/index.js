@@ -9,6 +9,7 @@ module.exports = (app) => {
   require("./mechanic")(app);
   require("./admin")(app);
   require("./forgetPassword")(app);
+  require("./registershop")(app);
   // Setup a default catch-all route that sends back a welcome message in JSON format.
 
   app.route("*").all((req, res) => {
