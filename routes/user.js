@@ -53,7 +53,7 @@ module.exports = (app) => {
     }
   );
 
-  app.post(base + "/location/user", (req, res) => {
+  app.post(base + "/location", (req, res) => {
     const user_location = userController.location(req, res);
     return user_location;
   });

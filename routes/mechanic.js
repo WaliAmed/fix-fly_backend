@@ -54,4 +54,8 @@ module.exports = (app) => {
     const mechanic_location = mechanicController.location(req, res);
     return mechanic_location;
   });
+
+  app.get(base + "/getall", (req, res) => {
+    return adminController.getAllMechanic(req, res);
+  });
 };

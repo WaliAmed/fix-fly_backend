@@ -62,7 +62,7 @@ exports.location = async (req, res, next) => {
   const { email, location } = req.body;
   const userWithEmail = await models.User.findOne({ where: { email } });
   if (userWithEmail) {
-    const user_update = await User.update(
+    const user_update = await models.User.update(
       { location: JSON.stringify(location) },
       { where: { email: email } }
     );
