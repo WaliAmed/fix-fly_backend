@@ -55,7 +55,7 @@ module.exports = (app) => {
     return mechanic_location;
   });
 
-  app.get(base + "/getall", (req, res) => {
-    return adminController.getAllMechanic(req, res);
+  app.get(base + "/getapproved", (req, res) => {
+    return mechanicController.getAproveMechanic(req, res);
   });
 };
