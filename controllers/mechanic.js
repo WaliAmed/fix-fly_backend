@@ -58,7 +58,7 @@ exports.login = async (req, res, next) => {
 exports.location = async (req, res, next) => {
   const { email, location } = req.body;
   console.log(email);
-  var loc= JSON.stringify(location);
+  var loc = JSON.stringify(location);
   console.log(loc);
   const userWithEmail = await models.Mechanic.findOne({ where: { email } });
   console.log(userWithEmail);
@@ -67,9 +67,18 @@ exports.location = async (req, res, next) => {
       { location: loc },
       { where: { email: email } }
     );
-    
+
     return res.status(400).json({ message: "updated location" });
   }
 
   return res.status(201).json({ message: "no updated location" });
+};
+
+exports.getAproveMechanic = async (req, res, next) => {
+  const mechanic_data = await models.Mechanic.findAll({
+    where: { status: "approved" },
+  });
+
+  if (!mechanic_data) return res.status(400).json({ message: "no record" });
+  else res.status(201).send(mechanic_data);
 };
