@@ -3,5 +3,5 @@ module.exports = {
   mechanic: require("./mechanic"),
   admin: require("./admin"),
   forgetPassword: require("./forgetPassword"),
-  registershop: require("./registershop"),
+  registershop: require("./Registershop"),
 };
