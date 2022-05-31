@@ -50,7 +50,7 @@ module.exports = (app) => {
     }
   );
 
-  app.post(base + "/location/mechanic", (req, res) => {
+  app.patch(base + "/location", (req, res) => {
     const mechanic_location = mechanicController.location(req, res);
     return mechanic_location;
   });

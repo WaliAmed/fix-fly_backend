@@ -57,15 +57,19 @@ exports.login = async (req, res, next) => {
 // email, location
 exports.location = async (req, res, next) => {
   const { email, location } = req.body;
+  console.log(email);
+  var loc= JSON.stringify(location);
+  console.log(loc);
   const userWithEmail = await models.Mechanic.findOne({ where: { email } });
+  console.log(userWithEmail);
   if (userWithEmail) {
-    const user_update = await Mechanic.update(
-      { location: JSON.stringify(location) },
+    const user_update = await models.Mechanic.update(
+      { location: loc },
       { where: { email: email } }
     );
-
-    return { message: "Location Updated!", mechanic: user_update };
+    
+    return res.status(400).json({ message: "updated location" });
   }
 
-  return { error: "Location Update Failed!" };
+  return res.status(201).json({ message: "no updated location" });
 };
