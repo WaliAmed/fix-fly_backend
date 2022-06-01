@@ -6,6 +6,7 @@ module.exports = (app) => {
   );
 
   require("./user")(app);
+  require("./order")(app);
   require("./mechanic")(app);
   require("./admin")(app);
   require("./forgetPassword")(app);
