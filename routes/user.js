@@ -2,7 +2,6 @@ const userController = require("../controllers").user;
 const userMiddleware = require("../middlewares").user;
 
 const { body, validationResult } = require("express-validator");
-
 let base = "/user";
 
 module.exports = (app) => {
@@ -58,3 +57,4 @@ module.exports = (app) => {
     return user_location;
   });
 };
+

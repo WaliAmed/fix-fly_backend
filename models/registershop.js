@@ -5,18 +5,12 @@ const { Sequelize } = require(".");
 module.exports = (sequelize, DataTypes) => {
   const Registershop = sequelize.define("Registershop", {
     title: DataTypes.STRING,
-    services: {
-      type: DataTypes.STRING,
-      serv: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
-      },
-      serv2: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
-      }
-    },
-    image: DataTypes.STRING,
+    wash: DataTypes.BOOLEAN,
+    interior_clean: DataTypes.BOOLEAN,
+    polishing: DataTypes.BOOLEAN,
+    engine_wash: DataTypes.BOOLEAN,
+    car_spray: DataTypes.BOOLEAN,
+    carpet_clean: DataTypes.BOOLEAN,
     location: DataTypes.STRING,
     address: DataTypes.STRING
   });

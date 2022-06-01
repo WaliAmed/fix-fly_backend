@@ -11,8 +11,23 @@ module.exports = {
       title: {
         type: Sequelize.STRING,
       },
-      services: {
-        type: Sequelize.STRING,
+      wash: {
+        type: Sequelize.BOOLEAN,
+      },
+      interior_clean: {
+        type: Sequelize.BOOLEAN,
+      },
+      polishing: {
+        type: Sequelize.BOOLEAN,
+      },
+      engine_wash: {
+        type: Sequelize.BOOLEAN,
+      },
+      car_spray: {
+        type: Sequelize.BOOLEAN,
+      },
+      carpet_clean: {
+        type: Sequelize.BOOLEAN,
       },
       image: {
         type: Sequelize.STRING,

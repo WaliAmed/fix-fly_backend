@@ -3,7 +3,7 @@ var bcrypt = require("bcryptjs");
 var crypto = require("crypto");
 
 //http://localhost:2000/user/signup
-exports.signUp = async (req, res) => {
+exports.shop = async (req, res) => {
   let reqdata = ({} = req.body);
   let data = {...reqdata};
 console.log(data)

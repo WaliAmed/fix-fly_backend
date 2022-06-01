@@ -1,7 +1,5 @@
 const shopController = require("../controllers").registershop;
-//const User= require('./../models/user.js');
 const { body, validationResult } = require("express-validator");
-
 let base = "/shop";
 
 module.exports = (app) => {
@@ -13,8 +11,9 @@ module.exports = (app) => {
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
       } else {
-        shopController.signUp(req, res);
+       shopController.shop(req,res)
       }
     }
   );
+
 };
