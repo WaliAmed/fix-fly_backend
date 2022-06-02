@@ -3,7 +3,7 @@
 const { Sequelize } = require(".");
 
 module.exports = (sequelize, DataTypes) => {
-  const Registershop = sequelize.define("Registershop", {
+  const Registershops = sequelize.define("Registershops", {
     title: DataTypes.STRING,
     wash: DataTypes.BOOLEAN,
     interior_clean: DataTypes.BOOLEAN,
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     location: DataTypes.STRING,
     address: DataTypes.STRING
   });
-  Registershop.associate = function (models) {};
+  Registershops.associate = function (models) {};
 
-  return Registershop;
+  return Registershops;
 };
