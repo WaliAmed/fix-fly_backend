@@ -7,4 +7,8 @@ module.exports = (app) => {
   app.post("/hireme", (req, res) => {
     orderController.Hireme(req, res);
   });
+
+  app.post("/getorderbyid", (req, res) => {
+    orderController.getOrderbyId(req, res);
+  });
 };

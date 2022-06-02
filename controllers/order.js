@@ -18,3 +18,14 @@ exports.Hireme = async (req, res) => {
       });
     });
 };
+
+exports.getOrderbyId = async (req, res) => {
+  console.log("req.body.user_code ------------> ", req.body.user_code);
+  const getOrders = await models.Orders.findAll({
+    where: { user_code: req.body.user_code },
+  });
+
+  if (!getOrders)
+    return res.status(400).send({ success: false, message: "No Orders!" });
+  else return res.status(201).send({ success: true, data: getOrders });
+};
