@@ -82,3 +82,14 @@ exports.getAproveMechanic = async (req, res, next) => {
   if (!mechanic_data) return res.status(400).json({ message: "no record" });
   else res.status(201).send(mechanic_data);
 };
+
+exports.getMechanicById = async (req, res, next) => {
+  const mechanic_data = await models.Mechanic.findOne({
+    where: { code: req.body.code },
+  });
+
+  console.log("mechanic_data ------> ", mechanic_data);
+
+  if (!mechanic_data) return res.status(400).json({ message: "no record" });
+  else res.status(201).send(mechanic_data);
+};

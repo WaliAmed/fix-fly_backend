@@ -58,4 +58,8 @@ module.exports = (app) => {
   app.get(base + "/getapproved", (req, res) => {
     return mechanicController.getAproveMechanic(req, res);
   });
+
+  app.post(base + "/getmechanicbyid", (req, res) => {
+    return mechanicController.getMechanicById(req, res);
+  });
 };
