@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     car_spray: DataTypes.BOOLEAN,
     carpet_clean: DataTypes.BOOLEAN,
     location: DataTypes.STRING,
-    address: DataTypes.STRING
+    address: DataTypes.STRING,
   });
   Registershops.associate = function (models) {};
 
