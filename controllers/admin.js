@@ -1,6 +1,7 @@
 const models = require("../models");
 var bcrypt = require("bcryptjs");
 var crypto = require("crypto");
+const { count } = require("console");
 
 //http://localhost:2000/admin/login
 exports.login = async (req, res, next) => {
@@ -30,6 +31,8 @@ exports.getAllMechanic = async (req, res, next) => {
   if (!mechanic_data) return res.status(400).json({ message: "no record" });
   else res.status(201).send(mechanic_data);
 };
+
+
 
 //Delete mechanic
 exports.Deletemechanic = async (req, res, next) => {
@@ -84,7 +87,32 @@ exports.getPendingMechanic = async (req, res, next) => {
   const mechanic_data = await models.Mechanic.findAll({
     where: { status: "pending" },
   });
-
   if (!mechanic_data) return res.status(400).json({ message: "no record" });
-  else res.status(201).send(mechanic_data);
+  else {res.status(201).send(mechanic_data);}
+  
+};
+
+//get all records
+exports.getallrecords = async (req, res, next) => {
+  const records_data = await models.Orders.findAll({ raw: true });
+
+  if (!records_data) return res.status(400).json({ message: "no record" });
+  else res.status(201).send(records_data);
+  
+};
+
+//get stats pending&approved mechanic
+exports.stats = async (req, res, next) => {
+  const mechanic_pending = await models.Mechanic.findAll({
+    where: { status: "pending" },
+  });
+
+  const mechanic_approved = await models.Mechanic.findAll({
+    where: { status: "approved" },
+  });
+
+  var a=(mechanic_pending.length)
+  var b=(mechanic_approved.length)
+   console.log(a+b)
+res.status(201).send(a+" "+b);  
 };

@@ -37,6 +37,15 @@ module.exports = (app) => {
     }
   });
 
+  app.get(base + "/getall/records", (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    } else {
+      adminController.getallrecords(req, res);
+    }
+  });
+
   app.delete(base + "/deletemechanic/:id", (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -88,6 +97,15 @@ module.exports = (app) => {
       return res.status(400).json({ errors: errors.array() });
     } else {
       adminController.getAproveMechanic(req, res);
+    }
+  });
+
+  app.get(base + "/getstatsmechanic", (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    } else {
+      adminController.stats(req, res);
     }
   });
 
