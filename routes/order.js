@@ -15,4 +15,8 @@ module.exports = (app) => {
   app.post("/getorderbyid/m", (req, res) => {
     orderController.getOrderbyIdM(req, res);
   });
+
+  app.patch("/makeCharges", (req, res) => {
+    orderController.makeCharges(req, res);
+  });
 };

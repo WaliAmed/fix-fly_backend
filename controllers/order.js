@@ -40,3 +40,9 @@ exports.getOrderbyIdM = async (req, res) => {
     return res.status(400).send({ success: false, message: "No Orders!" });
   else return res.status(201).send({ success: true, data: getOrders });
 };
+
+exports.makeCharges = async (req, res) => {
+  console.log(req.body);
+  await models.Orders.update(req.body, { where: { code: req.body.code } });
+  res.status(201).send("success");
+};
