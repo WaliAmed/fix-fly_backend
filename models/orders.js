@@ -15,11 +15,15 @@ module.exports = (sequelize, DataTypes) => {
     {
       code: DataTypes.STRING,
       user_code: DataTypes.STRING,
+      user_phone: DataTypes.STRING,
+      user_location: DataTypes.STRING,
       mechanic_code: DataTypes.STRING,
+      mechanic_phone: DataTypes.STRING,
       order_name: DataTypes.STRING,
       order_date: DataTypes.STRING,
       order_time: DataTypes.STRING,
       order_status: DataTypes.STRING,
+      order_amount: DataTypes.STRING,
     },
     {
       sequelize,

@@ -14,7 +14,16 @@ module.exports = {
       user_code: {
         type: Sequelize.STRING,
       },
+      user_location: {
+        type: Sequelize.STRING,
+      },
+      user_phone: {
+        type: Sequelize.STRING,
+      },
       mechanic_code: {
+        type: Sequelize.STRING,
+      },
+      mechanic_phone: {
         type: Sequelize.STRING,
       },
       order_name: {
@@ -27,6 +36,9 @@ module.exports = {
         type: Sequelize.STRING,
       },
       order_status: {
+        type: Sequelize.STRING,
+      },
+      order_amount: {
         type: Sequelize.STRING,
       },
       createdAt: {

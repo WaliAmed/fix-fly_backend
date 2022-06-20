@@ -11,4 +11,8 @@ module.exports = (app) => {
   app.post("/getorderbyid", (req, res) => {
     orderController.getOrderbyId(req, res);
   });
+
+  app.post("/getorderbyid/m", (req, res) => {
+    orderController.getOrderbyIdM(req, res);
+  });
 };
